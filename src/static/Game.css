@@ -1,0 +1,63 @@
+@import url("https://use.typekit.net/pjg5mtx.css");
+
+body, .stretch {
+	margin:0;
+	padding:0;
+}
+
+.fill-window {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-label {
+	text-align: center;
+	padding-top: 150px;
+	height: 100%;
+
+	font-family: pedestria-mvb, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 120px;
+	color: white;
+}
+
+.next-card-btn {
+	position: fixed;
+	bottom: 0;
+	border: 0px;
+	width: 100%;
+
+	border-top: 3px solid white;
+	background-color: white;
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	font-family: pedestria-mvb, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 80px;
+	color: white;
+}
+
+.bg-green {
+	background-color: #00ff00
+}
+.bg-blue {
+	background-color: #0000ff
+}
+.bg-orange {
+	background-color: #ff0000
+}
+.bg-pink {
+	background-color: #ff0066
+}
+.bg-purple {
+	background-color: #bf00ff
+}
+.bg-cyan {
+	background-color: #06f9f9
+}
