@@ -7,7 +7,7 @@ import './static/Game.css';
 class Game extends React.Component {
   constructor(props) {
     super(props);
-    this.deckTitle = "First";
+    this.deckTitle = this.props.match.params.title;
     this.allCards = ['DRINK A TON'];
     this.colors = ['green', 'orange', 'blue', 'pink', 'purple', 'cyan'];
     let randCard = Math.floor(Math.random() * this.allCards.length);
