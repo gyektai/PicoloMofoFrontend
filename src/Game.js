@@ -8,7 +8,7 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
     this.deckTitle = this.props.match.params.title;
-    this.allCards = ['DRINK A TON'];
+    this.allCards = ['START!'];
     this.colors = ['green', 'orange', 'blue', 'pink', 'purple', 'cyan'];
     const randCard = Math.floor(Math.random() * this.allCards.length);
     const randColor = Math.floor(Math.random() * this.colors.length);
@@ -29,7 +29,6 @@ class Game extends React.Component {
               this.allCards.push(r.data.present);
             })
         }
-        console.log(this.allCards);
       })
   }
 

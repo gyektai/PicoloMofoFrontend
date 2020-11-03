@@ -11,39 +11,50 @@ class Selector extends React.Component {
     	this.bgColor = colors[randColor]
     	this.allDecks = [];
 		this.state = {
-			deck: "test",
+			deck: "",
 		}
 
 	}
+
 	componentDidMount() {
 	    axios.get('/api/decks')
 	      .then(res => {
-	        this.allDecks = res.data;
+	        let decks = res.data;
+	        console.log(decks);
+	        for(let i = 0; i < decks.length; i++){
+	        	this.allDecks.push(decks[i].title);
+	        }
 	        console.log(this.allDecks);
+	       	this.setState({
+	      		deck: "Default",
+	      });
       })
-	      this.setState();
 
-  }
-	handlePick = () => {
+
+  	}
+
+	handlePick = (deckName) => {
 		this.setState(state => ({
-			deck: "Yurrrr",
+			deck: deckName,
 		}));
 	}
 
 	render() {
-		const bgColor = this.state.bgColor;
 		const deckButtons = [];
-		for(let i = 0; i < 11; i++){
+		for(let i = 0; i < this.allDecks.length; i++){
 			deckButtons.push(
-				<button onClick={this.handlePick} className={`deck-option bg-${this.bgColor}`}>Switch {i}</button>
+				<button 
+				onClick={() => this.handlePick(this.allDecks[i])} 
+				className={`deck-option bg-${this.bgColor}`}
+				>
+				{this.allDecks[i]}
+				</button>
 				);
 		}
 
 		return (
-			<div className={`fill-window bg-${this.bgColor}`}>
-				
-					{deckButtons}
-				
+			<div className={`fill-window bg-${this.bgColor}`}>				
+				{deckButtons}
 				<Link to={`/play/${this.state.deck}`}>Play</Link>
 			</div>
 			)
