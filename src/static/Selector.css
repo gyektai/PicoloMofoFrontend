@@ -17,3 +17,9 @@
 	font-size: 24px;
 	color: white;
 }
+
+.deck-selected {
+	font-style: bold;
+	font-weight: 700;
+	font-size: 36px;
+}

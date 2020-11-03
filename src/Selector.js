@@ -42,14 +42,26 @@ class Selector extends React.Component {
 	render() {
 		const deckButtons = [];
 		for(let i = 0; i < this.allDecks.length; i++){
+			const curDeck = this.allDecks[i];
+			if(curDeck === this.state.deck){
+				deckButtons.push(
+					<button
+					onClick={() => this.handlePick(curDeck)}
+					className={`deck-option deck-selected bg-${this.bgColor}`}
+					>
+					&#9733; &nbsp; {curDeck} &nbsp; &#9733;
+					</button>
+					);
+			} else {
 			deckButtons.push(
 				<button 
-				onClick={() => this.handlePick(this.allDecks[i])} 
+				onClick={() => this.handlePick(curDeck)} 
 				className={`deck-option bg-${this.bgColor}`}
 				>
-				{this.allDecks[i]}
+				{curDeck}
 				</button>
 				);
+		}
 		}
 
 		return (

@@ -23,6 +23,7 @@ class Game extends React.Component {
     axios.get(`/api/decks/${this.deckTitle}`)
       .then(res => {
         const myDeck = res.data;
+        this.allCards = [];
         for(let i=0; i < myDeck.cards.length; i++){
           axios.get(`/api/cards/${myDeck.cards[i]}`)
             .then(r => {
