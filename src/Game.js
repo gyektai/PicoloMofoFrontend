@@ -10,8 +10,8 @@ class Game extends React.Component {
     this.deckTitle = this.props.match.params.title;
     this.allCards = ['DRINK A TON'];
     this.colors = ['green', 'orange', 'blue', 'pink', 'purple', 'cyan'];
-    let randCard = Math.floor(Math.random() * this.allCards.length);
-    let randColor = Math.floor(Math.random() * this.colors.length);
+    const randCard = Math.floor(Math.random() * this.allCards.length);
+    const randColor = Math.floor(Math.random() * this.colors.length);
     this.state = {
       cardNum: randCard,
       card: this.allCards[0],
@@ -34,10 +34,10 @@ class Game extends React.Component {
   }
 
   handleNextCard = () => {
-    let addToCard = Math.floor(Math.random() * 3) + 1;
-    let addToColor= Math.floor(Math.random() * 3) + 1;
-    let newCardIndex = (this.state.cardNum + addToCard) % this.allCards.length;
-    let newColorIndex = (this.state.bgColor + addToColor) % this.colors.length;
+    const addToCard = Math.floor(Math.random() * 3) + 1;
+    const addToColor= Math.floor(Math.random() * 3) + 1;
+    const newCardIndex = (this.state.cardNum + addToCard) % this.allCards.length;
+    const newColorIndex = (this.state.bgColor + addToColor) % this.colors.length;
 
     this.setState(state => ({
       cardNum: newCardIndex,
@@ -47,7 +47,7 @@ class Game extends React.Component {
   }
 
   render() {
-    let color = this.colors[this.state.bgColor]
+    const color = this.colors[this.state.bgColor]
     return (
       <div className={`stretch fill-window bg-${color}`}>
        {/* just for easy nav right now*/}
