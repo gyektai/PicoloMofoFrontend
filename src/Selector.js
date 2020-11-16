@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './static/Selector.css';
+import Search from "./Search";
 
 class Selector extends React.Component {
 	constructor(props){
@@ -20,11 +21,9 @@ class Selector extends React.Component {
 	    axios.get('/api/decks')
 	      .then(res => {
 	        let decks = res.data;
-	        console.log(decks);
 	        for(let i = 0; i < decks.length; i++){
 	        	this.allDecks.push(decks[i].title);
 	        }
-	        console.log(this.allDecks);
 	       	this.setState({
 	      		deck: "Default",
 	      });
@@ -41,7 +40,7 @@ class Selector extends React.Component {
 
 	render() {
 		const deckButtons = [];
-		for(let i = 0; i < this.allDecks.length; i++){
+		for(let i = 0; i < 10; i++){
 			const curDeck = this.allDecks[i];
 			if(curDeck === this.state.deck){
 				deckButtons.push(
@@ -68,6 +67,7 @@ class Selector extends React.Component {
 			<div className={`fill-window bg-${this.bgColor}`}>				
 				{deckButtons}
 				<Link to={`/play/${this.state.deck}`}>Play</Link>
+				<Search />
 			</div>
 			)
 	}
