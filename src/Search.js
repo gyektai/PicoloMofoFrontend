@@ -11,6 +11,7 @@ class Search extends React.Component {
 			results: [],
 			loading: false,
 			message: '',
+			deck: "",
 		};
 		this.cancel = '';
 	}
@@ -74,8 +75,11 @@ class Search extends React.Component {
 			return (
 				<div className="results-container">
 					{results.map(result => {
+						if (result.title === this.props.deck){
+							return <div onClick={() => this.props.handlePick(result.title)} className="search-result selected">&#9733; &nbsp; {result.title} &nbsp; &#9733;</div>
+						}
 						return (
-							<div>{result.title}</div>
+							<div onClick={() => this.props.handlePick(result.title)} className="search-result">{result.title}</div>
 						);
 					})}
 				</div>
@@ -87,7 +91,7 @@ class Search extends React.Component {
 		const { query, loading, message } = this.state;
 		return (
 			<div className="container">
-				<h2 className="heading">Live Search: React Application</h2>
+				<h2 className="heading">Find Your Custom Deck</h2>
 				<label className="search-label" htmlFor="search-input">
 					<input
 						type="text"

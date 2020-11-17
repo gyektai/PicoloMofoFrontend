@@ -67,7 +67,7 @@ class Selector extends React.Component {
 			<div className={`fill-window bg-${this.bgColor}`}>				
 				{deckButtons}
 				<Link to={`/play/${this.state.deck}`}>Play</Link>
-				<Search />
+				<Search handlePick={this.handlePick.bind(this)} deck={this.state.deck} />
 			</div>
 			)
 	}

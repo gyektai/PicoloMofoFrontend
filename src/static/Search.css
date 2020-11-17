@@ -1,11 +1,16 @@
+@import "Default.css";
+
 .heading {
-	font-size: 30px;
-	padding: 16px 0;
-	color: #444;
+	font-size: 48px;
+	padding: 0px 0;
+	color: white;
 	text-align: center;
 }
 /*Container*/
 .container {
+	font-family: pedestria-mvb, sans-serif;
+	font-weight: 400;
+
 	margin: 36px auto;
 	width: 100%;
 	max-width: 800px;
@@ -15,12 +20,21 @@
 }
 .container input {
 	width: 100%;
-	padding: 16px;
+	padding: 10px;
 	font-size: 36px;
 	font-style: italic;
 	color: #444;
 	box-sizing: border-box;
 	outline: none;
+}
+
+.search-result {
+	color: white;
+	font-size: 22px;
+}
+
+.selected {
+	font-weight: 700;
 }
 .search-icon {
 	position: absolute;
