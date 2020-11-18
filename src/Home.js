@@ -15,8 +15,8 @@ class Home extends React.Component {
         <div className="bg-pink fill-window">
           <div className="tc-txt tc-top">It&apos;s <span style={{fontSize: 180}}>Picolo</span>,</div>
           <div className="tc-txt tc-bot">Mofo!</div>
-          <Link to='/play/default' className="btn-play bg-pink">PLAY &rarr;</Link>
-          <Link to='/deck-selector'>Pick Deck</Link>
+          <Link to='/play/default' className="btn-play">PLAY &rarr;</Link>
+          <Link to='/deck-selector' className="btn-deck-select">Custom Deck &nbsp;&nbsp;&nbsp;</Link>
         </div>
 
       )

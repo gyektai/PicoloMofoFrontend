@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import './static/Selector.css';
 import Search from "./Search";
@@ -66,8 +66,9 @@ class Selector extends React.Component {
 		return (
 			<div className={`fill-window bg-${this.bgColor}`}>				
 				{deckButtons}
-				<Link to={`/play/${this.state.deck}`}>Play</Link>
 				<Search handlePick={this.handlePick.bind(this)} deck={this.state.deck} />
+				<Link to={`/play/${this.state.deck}`} className="play-link">PLAY &rarr;</Link>
+
 			</div>
 			)
 	}
