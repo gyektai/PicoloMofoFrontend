@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import './static/Creator.css'
 
 class Creator extends Component {
 	constructor(props){
@@ -72,6 +73,13 @@ class Creator extends Component {
 		this.setState({
 			cardPresent: event.target.value,
 		});
+
+	}
+
+	cardKeyPress = (event) => {
+		if (event.key === 'Enter') {
+			this.handleAddCard();
+		}
 	}
 
 
@@ -81,7 +89,7 @@ class Creator extends Component {
 		return (
 			<div>
 				{allCards.map(card => {
-					return <div>{card}</div>
+					return <div className="card-added">{card}</div>
 				})}
 			</div>
 		);
@@ -89,21 +97,33 @@ class Creator extends Component {
 
 	render() {
 		return (
-		<div>
-			<div>Create Your Deck</div>
-			<div>Deck Title</div>
-			<input 
-				onChange={this.handleTitleInputChange}
-				value={this.state.deckTitle} />
-			<div>Add Card</div>
-			<input 
-				onChange={this.handleCardInputChange}
-				value={this.state.cardPresent} />
-			<button onClick={this.handleAddCard}>Add</button>
-			<div>Cards</div>
+		<div className="fill-window bg-blue">
+			<div className="heading">Create Your Deck</div>
+			<div className="container">
+				<label className="search-label">
+					<input 
+						className="title-input"
+						placeholder="Title"
+						onChange={this.handleTitleInputChange}
+						value={this.state.deckTitle} />
+				</label>
+			</div>
+			<div className="container big">
+				<input 
+					placeholder="Write a new card"
+					onKeyDown={this.cardKeyPress}
+					onChange={this.handleCardInputChange}
+					value={this.state.cardPresent} />
+			</div>
+			<Link
+				to={`/play/${this.state.deckTitle}`}
+				className="btn-create"
+				onClick={this.handleDeckCreation}>
+					Create!
+			</Link>
+			
 			{ this.renderCardTags() }
-			<button onClick={this.handleDeckCreation}>Create Deck!</button>
-			<div>TITLED: {this.state.deckTitle}</div>
+
 		</div>
 		)
 	}

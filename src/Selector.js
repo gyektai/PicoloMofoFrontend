@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import './static/Selector.css';
 import Search from "./Search";
