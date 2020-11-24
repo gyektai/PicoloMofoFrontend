@@ -90,8 +90,8 @@ class Search extends React.Component {
 	render() {
 		const { query, loading, message } = this.state;
 		return (
-			<div className="container">
-				<h2 className="heading">Find Your Custom Deck</h2>
+			<div className="search-container">
+				<div className="search-heading">Find Your Custom Deck</div>
 				<label className="search-label" htmlFor="search-input">
 					<input
 						type="text"
@@ -99,8 +99,7 @@ class Search extends React.Component {
 						id="search-input"
 						placeholder="Search Deck..."
 						onChange={this.handleOnInputChange} />
-					<i className="fa fa-search search-icon" />
-				</label>
+										</label>
 				{ this.renderSearchResults() }
 			</div>
 		)

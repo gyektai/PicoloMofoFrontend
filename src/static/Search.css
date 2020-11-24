@@ -1,24 +1,29 @@
 @import "Default.css";
 
-.heading {
-	font-size: 48px;
+.search-heading {
 	padding: 0px 0;
 	color: white;
 	text-align: center;
+
+	font-family: pedestria-mvb, sans-serif;
+
+	font-weight: 700;
+	font-size: 48px;
 }
 /*Container*/
-.container {
+.search-container {
 	font-family: pedestria-mvb, sans-serif;
 	font-weight: 400;
 
 	margin: 36px auto;
+	margin-top: 0px;
 	width: 100%;
 	max-width: 800px;
 }
 .search-label {
 	position: relative;
 }
-.container input {
+.search-container input {
 	width: 100%;
 	padding: 10px;
 	font-size: 36px;

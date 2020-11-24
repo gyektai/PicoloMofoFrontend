@@ -68,7 +68,7 @@ class Selector extends React.Component {
 				{deckButtons}
 				<Search handlePick={this.handlePick.bind(this)} deck={this.state.deck} />
 				<Link to={`/play/${this.state.deck}`} className="play-link">PLAY &rarr;</Link>
-				<Link to='/create-deck'>Create Deck</Link>
+				<Link to='/create-deck' className="btn-deck-creator">Create Deck &nbsp;&nbsp;&nbsp;</Link>
 
 			</div>
 			)

@@ -116,7 +116,7 @@ class Creator extends Component {
 					value={this.state.cardPresent} />
 			</div>
 			<Link
-				to={`/play/${this.state.deckTitle}`}
+				to={'/'}
 				className="btn-create"
 				onClick={this.handleDeckCreation}>
 					Create!
