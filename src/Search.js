@@ -68,22 +68,27 @@ class Search extends React.Component {
 			});
 	};
 
+	renderResultTags = (results) => {
+
+		const resultTags = [];
+		for( let i = 0; i < 8; i++){
+			let result = results[i];
+			if (result.title === this.props.deck){
+				resultTags.push(<div onClick={() => this.props.handlePick(result.title)} className="search-result selected">&#9733; &nbsp; {result.title} &nbsp; &#9733;</div>);
+			}
+			else { 
+				resultTags.push(<div onClick={() => this.props.handlePick(result.title)} className="search-result">{result.title}</div>);
+			}
+		}
+		return resultTags;
+	
+	}
+
 	renderSearchResults = () => {
 		const {results} = this.state;
 
 		if (Object.keys(results).length && results.length) {
-			return (
-				<div className="results-container">
-					{results.map(result => {
-						if (result.title === this.props.deck){
-							return <div onClick={() => this.props.handlePick(result.title)} className="search-result selected">&#9733; &nbsp; {result.title} &nbsp; &#9733;</div>
-						}
-						return (
-							<div onClick={() => this.props.handlePick(result.title)} className="search-result">{result.title}</div>
-						);
-					})}
-				</div>
-			);
+			return this.renderResultTags(results);
 		}
 	};
 
