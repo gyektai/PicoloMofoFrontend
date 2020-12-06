@@ -32,7 +32,7 @@ class Creator extends Component {
 
 		for(let i = 0; i < cards.length; i++){
 			await axios
-				.post('/api/cards/', {
+				.post('https://gyektai.pythonanywhere.com/api/cards/', {
 					present: cards[i]
 				})
 				.then(response => {
@@ -44,7 +44,7 @@ class Creator extends Component {
 				});
 		}
 		axios
-			.post('/api/decks/', {
+			.post('https://gyektai.pythonanywhere.com/api/decks/', {
 				title: this.state.deckTitle,
 				cards: cardKeys
 				})
@@ -102,7 +102,8 @@ class Creator extends Component {
 			<div className="container">
 				<label className="search-label">
 					<input 
-						className="title-input"
+						type="text"
+						id="search-input"
 						placeholder="Title"
 						onChange={this.handleTitleInputChange}
 						value={this.state.deckTitle} />
@@ -110,6 +111,7 @@ class Creator extends Component {
 			</div>
 			<div className="container big">
 				<input 
+					type="text"
 					placeholder="Write a new card"
 					onKeyDown={this.cardKeyPress}
 					onChange={this.handleCardInputChange}

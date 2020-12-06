@@ -18,7 +18,7 @@ class Selector extends React.Component {
 	}
 
 	componentDidMount() {
-	    axios.get('/api/decks')
+	    axios.get('https://gyektai.pythonanywhere.com/api/decks')
 	      .then(res => {
 	        let decks = res.data;
 	        for(let i = 0; i < decks.length; i++){

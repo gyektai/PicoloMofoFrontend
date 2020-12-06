@@ -20,12 +20,12 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/decks/${this.deckTitle}`)
+    axios.get(`https:\/\/gyektai.pythonanywhere.com/api/decks/${this.deckTitle}`)
       .then(res => {
         const myDeck = res.data;
         this.allCards = [];
         for(let i=0; i < myDeck.cards.length; i++){
-          axios.get(`/api/cards/${myDeck.cards[i]}`)
+          axios.get(`https:\/\/gyektai.pythonanywhere.com/api/cards/${myDeck.cards[i]}`)
             .then(r => {
               this.allCards.push(r.data.present);
             })

@@ -39,7 +39,7 @@ class Search extends React.Component {
 	fetchSearchResults = (updatedPageNo = '', query) => {
 		const pageNumber = updatedPageNo ? `&page=${updatedPageNo}`: '';
 
-		const searchUrl = `/api/decks/?search=${query}`;
+		const searchUrl = `https:\/\/gyektai.pythonanywhere.com/api/decks/?search=${query}`;
 
 		if(this.cancel) {
 			this.cancel.cancel();
